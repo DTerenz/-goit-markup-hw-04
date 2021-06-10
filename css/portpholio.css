@@ -12,8 +12,10 @@
   --background-footer-color:#2F303A;
   --contacts-end-color:rgba(255, 255, 255, 0.6);
   --text-shadow-logo: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --social-list-item-link-background-color: rgba(255, 255, 255, 0.1);
   --all-buttons-color:#f5f4fa;
   --title-box-boarder:1px solid #eeeeee;
+  --list-item-hover-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16)
 }
 
 
@@ -101,9 +103,19 @@
   align-items: center;
 }
 
-.menu-item:not(:last-child){
+
+
+
+.menu-item-contact:not(:last-child){
   margin-right: 50px;
 }
+
+
+.menu-item:not(:last-child){
+  margin-right: 30px;
+}
+
+
 .name-card {
   margin: 0px;
   padding: 0px;
@@ -137,6 +149,12 @@
 .link:focus{
   color: var(--hover-focus-color);
 }
+.menu-item-contact .contacts-menu-item:hover, 
+.menu-item-contact .contacts-menu-item:focus{
+  color: var(--hover-focus-color);
+  fill: var(--hover-focus-color);
+}
+
 ul{
   padding: 0px;
   margin: 0px;
@@ -145,7 +163,7 @@ ul{
 .contacts-menu {
   list-style: none;
   display: flex;
-  padding-left: 331px;
+  padding-left: 305px;
 }
 
 .contacts-menu-item {
@@ -153,7 +171,23 @@ ul{
   font-weight: 500;
   color: var(--contact-menu-itam-color);
   text-decoration: none;
+  display: flex;
 }
+
+.menu-item-contact::before{
+  content: url(../images/symbol-defs.svg#icon-smartphone);
+  width: 16px;
+  height: 12px;
+  display: block;
+
+}
+
+
+.menu-item-contact{
+  display: inline;
+}
+
+
 .contacts-menu-item:hover {
   color: var(--logo-web-color);
 }
@@ -193,7 +227,8 @@ justify-content: center;
 }
 
 
-.all-buttons:hover {
+.all-buttons:hover ,
+.all-buttons:focus {
   color: var(--nav-background-color);
   background: var(--logo-web-color);
   cursor: pointer;
@@ -281,6 +316,12 @@ img {
   margin-left: var(--card-get);
 
   }
+.list-item:hover{
+  box-shadow: var(--list-item-hover-box-shadow);
+  cursor: pointer;
+}
+
+
   
 .title-box{
 padding: 20px 24px;
@@ -380,7 +421,7 @@ font-weight: 700;
 line-height: 16px;
 letter-spacing: 0.03em;
 text-transform: uppercase;
-color: #FFFFFF;
+color: var(--nav-background-color);
 display: inline-block;
 margin-bottom: 20px;
 }
@@ -390,7 +431,7 @@ margin-bottom: 20px;
   display: block;
   width: 20px;
   height: 20px;
-  fill: #ffffff;
+  fill: var(--nav-background-color);
 }
 
 
@@ -414,12 +455,12 @@ justify-content: space-between;
   widows: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color:  rgba(255, 255, 255, 0.1);
+  background-color:  var(--social-list-item-link-background-color);
 }
 
 
 
 .social-list-item .social-list-item-link:hover ,
 .social-list-item .social-list-item-link:focus{
-  background-color:#2196F3;
+  background-color: var(--hover-focus-color);
 }
